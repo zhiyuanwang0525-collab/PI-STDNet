@@ -4,7 +4,7 @@
 
 - README uses restrained research-release wording and does not claim publication, acceptance, DOI, venue, volume, issue, or final paper status.
 - README uses "research implementation" wording.
-- Citation placeholders do not invent DOI, venue, or year.
+- Code-release citation metadata is available in `CITATION.cff` and does not invent DOI or venue.
 - Known author and affiliation metadata were added: Zhiyuan Wang, Kun Zheng, Jiaolong Zhang; China University of Geosciences, Wuhan.
 - Path scan passed with `python tools/check_paths.py .`.
 - CLI help works for `scripts/train.py`, `scripts/evaluate.py`, `scripts/infer.py`, and `scripts/visualize_temporal_case.py`.
@@ -30,7 +30,7 @@
 4. Confirm `git status --short --ignored` does not show ignored source directories.
 5. Confirm no local dataset, checkpoint, output, or generated figure directory is inside the repository.
 6. Confirm whether a `NOTICE` file or source-file copyright headers are required by the project owners.
-7. Replace `CITATION_TODO.cff` or update it with final paper metadata.
+7. Update `CITATION.cff` with final paper metadata after publication.
 8. Create a clean GitHub repository and push only source, configs, docs, tests, and lightweight examples.
 9. Add a release note that TorNet data must be obtained officially and pretrained weights are not publicly released.
 
@@ -46,7 +46,7 @@
 ## First Release Checklist
 
 - [x] Apache-2.0 license selected and committed.
-- [ ] Citation metadata finalized or clearly marked as TODO.
+- [x] Code-release citation metadata added; final paper metadata pending.
 - [ ] README reviewed by all authors.
 - [ ] Data preparation instructions verified against the official TorNet access process.
 - [x] Public checkpoint policy confirmed: pretrained weights are not released.

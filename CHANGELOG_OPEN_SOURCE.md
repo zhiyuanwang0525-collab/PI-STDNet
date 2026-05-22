@@ -11,6 +11,7 @@
 - Added TODO markers for license, dataset release instructions, pretrained weights, hardware details, and final citation.
 - Added Apache-2.0 license metadata after license selection.
 - Added author-person copyright notice, official TorNet data wording, and non-release policy for pretrained weights.
+- Renamed citation metadata to `CITATION.cff` and removed unconfirmed DOI/venue/year placeholders.
 
 ## Legacy Script Moves
 

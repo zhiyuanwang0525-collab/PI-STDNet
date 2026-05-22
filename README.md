@@ -73,18 +73,18 @@ Use the YAML config files, fixed random seed, and the same checkpoint to reprodu
 
 ## Citation
 
-If you use this repository, please cite:
+If you use this repository, please cite the PI-STDNet research code release. The paper citation will be updated after publication details are confirmed.
 
 ```bibtex
-@article{TODO_PI_STDNet,
+@misc{wang2026pistdnet,
   title = {PI-STDNet: Physics-Guided Spatiotemporal Framework for Tornado Detection},
   author = {Wang, Zhiyuan and Zheng, Kun and Zhang, Jiaolong},
-  journal = {TODO},
-  year = {TODO}
+  note = {Research code release. Publication details to be updated.},
+  year = {2026}
 }
 ```
 
-Affiliation: China University of Geosciences, Wuhan. Corresponding author: Kun Zheng, ZhengK@cug.edu.cn. TODO: update the citation after publication details are confirmed.
+Affiliation: China University of Geosciences, Wuhan. Corresponding author: Kun Zheng, ZhengK@cug.edu.cn.
 
 ## License
 

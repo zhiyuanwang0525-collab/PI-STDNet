@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "TODO: Update citation metadata after the paper information is finalized."
+message: "If you use this code, please cite the PI-STDNet research code release. Paper citation details will be updated after publication."
 title: "PI-STDNet: Physics-Guided Spatiotemporal Framework for Tornado Detection"
 authors:
   - family-names: "Wang"
@@ -12,7 +12,5 @@ authors:
   - family-names: "Zhang"
     given-names: "Jiaolong"
     affiliation: "China University of Geosciences, Wuhan"
-abstract: "TODO: Add abstract or citation metadata after the paper information is finalized."
-year: "TODO"
-doi: "TODO"
-url: "TODO"
+license: "Apache-2.0"
+repository-code: "https://github.com/zhiyuanwang0525-collab/PI-STDNet"
