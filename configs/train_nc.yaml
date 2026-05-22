@@ -1,0 +1,17 @@
+inherits: "default.yaml"
+
+data:
+  dataset_root: "/path/to/TorNet"
+  catalog_path: "/path/to/TorNet/catalog.csv"
+  train_split: "train"
+  val_split: "test"
+
+training:
+  batch_size: 32
+  learning_rate: 0.0005
+  epochs: 20
+  seed: 42
+  checkpoint_dir: "./checkpoints/nc"
+  output_dir: "./outputs/nc"
+  log_dir: "./logs/nc"
+

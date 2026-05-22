@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "TODO: Update citation metadata after the paper information is finalized."
+title: "PI-STDNet: Physics-Guided Spatiotemporal Framework for Tornado Detection"
+authors:
+  - family-names: "Wang"
+    given-names: "Zhiyuan"
+    affiliation: "China University of Geosciences, Wuhan"
+  - family-names: "Zheng"
+    given-names: "Kun"
+    affiliation: "China University of Geosciences, Wuhan"
+    email: "ZhengK@cug.edu.cn"
+  - family-names: "Zhang"
+    given-names: "Jiaolong"
+    affiliation: "China University of Geosciences, Wuhan"
+abstract: "TODO: Add abstract or citation metadata after the paper information is finalized."
+year: "TODO"
+doi: "TODO"
+url: "TODO"

@@ -1,0 +1,48 @@
+project: PI-STDNet
+
+data:
+  dataset_root: "/path/to/TorNet"
+  catalog_path: "/path/to/TorNet/catalog.csv"
+  train_split: "train"
+  val_split: "test"
+  test_split: "test"
+  input_variables: ["DBZ", "VEL", "KDP", "RHOHV", "ZDR", "WIDTH", "SHEAR", "DEBRIS", "MAAS_3", "MAAS_5", "MAAS_7"]
+
+model:
+  input_shape: [120, 240]
+  n_frames: 4
+  channels_per_frame: 11
+  n_sweeps: 2
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 9, 3]
+  drop_path_rate: 0.2
+  topk: 16
+  use_maas: true
+  use_pam: true
+  attention_type: "physics"
+  label_smoothing: 0.1
+
+training:
+  batch_size: 32
+  accum_steps: 2
+  learning_rate: 0.0005
+  weight_decay: 0.05
+  epochs: 20
+  warmup_epochs: 5
+  optimizer: "AdamW"
+  scheduler: "warmup_cosine"
+  seed: 42
+  num_workers: 4
+  prefetch_factor: 4
+  use_amp: true
+  checkpoint_dir: "./checkpoints"
+  output_dir: "./outputs"
+  log_dir: "./logs"
+
+evaluation:
+  batch_size: 32
+  num_workers: 4
+  threshold: null
+  output_dir: "./outputs/eval"
+  use_amp: true
+

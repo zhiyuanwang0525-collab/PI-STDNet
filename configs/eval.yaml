@@ -1,0 +1,25 @@
+data:
+  dataset_root: "/path/to/TorNet"
+  catalog_path: "/path/to/TorNet/catalog.csv"
+  test_split: "test"
+
+model:
+  input_shape: [120, 240]
+  n_frames: 4
+  channels_per_frame: 11
+  n_sweeps: 2
+  dims: [32, 64, 128, 256]
+  depths: [3, 3, 9, 3]
+  drop_path_rate: 0.2
+  topk: 16
+  use_maas: true
+  use_pam: true
+  attention_type: "physics"
+
+evaluation:
+  batch_size: 32
+  num_workers: 4
+  threshold: null
+  output_dir: "./outputs/eval"
+  use_amp: true
+

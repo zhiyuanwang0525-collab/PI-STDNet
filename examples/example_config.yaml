@@ -1,0 +1,12 @@
+data:
+  dataset_root: "/path/to/TorNet"
+  catalog_path: "/path/to/TorNet/catalog.csv"
+
+training:
+  batch_size: 4
+  epochs: 1
+  seed: 42
+  checkpoint_dir: "./checkpoints/example"
+  output_dir: "./outputs/example"
+  log_dir: "./logs/example"
+

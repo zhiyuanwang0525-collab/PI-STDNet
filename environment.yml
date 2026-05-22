@@ -1,0 +1,24 @@
+name: pistdnet
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - tqdm
+  - pyyaml
+  - h5py
+  - xarray
+  - netcdf4
+  - pytest
+  - pip:
+      - torch
+      - torchvision
+      - timm
+      - opencv-python

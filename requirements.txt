@@ -1,0 +1,15 @@
+torch
+torchvision
+numpy
+scipy
+pandas
+scikit-learn
+matplotlib
+tqdm
+PyYAML
+timm
+h5py
+xarray
+netCDF4
+opencv-python
+pytest
