@@ -25,7 +25,7 @@ class MockArgs:
         self.disable_rot_stats = disable_rot_stats
 
 class UMAPPlotter:
-    """TGRS 级：深层语义空间 UMAP 流形对比图 (完美分离版)"""
+    """Research 级：深层语义空间 UMAP 流形对比图 (完美分离版)"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -209,3 +209,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     extract_features(args)
+
+

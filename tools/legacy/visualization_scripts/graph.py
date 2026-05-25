@@ -170,7 +170,7 @@ def generate_fig1_motivation(args):
     m_vel = plot_polar(ax_vel_tor, tor_case['vel'], f'(b) Tornadic Storm — VEL', vel_cmap, vel_norm)
     
     # 在VEL图上标注速度对偶区域
-    ax_vel_tor.text(0.5, 0.02, f'Confirmed Tornado (P={tor_case["prob"]:.3f})',
+    ax_vel_tor.text(0.5, 0.02, f'TOR Tornado (P={tor_case["prob"]:.3f})',
                     transform=ax_vel_tor.transAxes, fontsize=10,
                     ha='center', color='white', fontweight='bold',
                     bbox=dict(boxstyle='round', facecolor='#2E7D32', alpha=0.8))
@@ -438,3 +438,5 @@ if __name__ == '__main__':
     generate_fig1_motivation(args)
     generate_fig3_shear(args)
     compute_efficiency(args)
+
+

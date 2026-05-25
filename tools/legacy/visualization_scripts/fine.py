@@ -104,3 +104,5 @@ if __name__ == '__main__':
     plotter = GalleryPlotter()
     plotter.plot_gallery(dataset, tor_cases, "TOR")
     plotter.plot_gallery(dataset, wrn_cases, "WRN")
+
+

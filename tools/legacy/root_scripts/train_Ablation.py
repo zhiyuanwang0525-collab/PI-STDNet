@@ -2,7 +2,7 @@
 """
 PI-STDNet V8.3 严谨消融实验脚本
 ====================================
-与满血版 trainV8fix.py 的唯一差异：通过 --disable_xxx 开关禁用单个模块。
+与满血版 trainV8fix.py 的唯一差异：通过 --disable_* 开关禁用单个模块。
 所有超参数、训练策略、数据加载、EMA、学习率调度 100% 对齐满血版。
 
 消融组别：
@@ -569,3 +569,5 @@ if __name__ == '__main__':
     import multiprocessing
     multiprocessing.freeze_support()
     main()
+
+

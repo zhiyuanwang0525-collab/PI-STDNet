@@ -23,8 +23,8 @@ class MockArgs:
         self.disable_topk = True  
         self.disable_rot_stats = disable_rot_stats
 
-class MatrixPlotterTGRS:
-    """TGRS 级：2x3 终极性能矩阵图 (主图画布全局扩容版)"""
+class MatrixPlotterResearch:
+    """Research 级：2x3 终极性能矩阵图 (主图画布全局扩容版)"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -257,7 +257,7 @@ def extract_and_plot(args):
     for name in probs_collected:
         probs_collected[name] = np.array(probs_collected[name])
         
-    plotter = MatrixPlotterTGRS(save_dir=args.save_dir)
+    plotter = MatrixPlotterResearch(save_dir=args.save_dir)
     plotter.plot_matrix(probs_collected, targets)
 
 if __name__ == '__main__':
@@ -270,3 +270,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     extract_and_plot(args)
+
+

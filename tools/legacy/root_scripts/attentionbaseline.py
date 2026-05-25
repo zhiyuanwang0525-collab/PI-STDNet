@@ -205,3 +205,5 @@ if __name__ == '__main__':
     print("\n运行命令示例：")
     print("  python trainV72_ablation.py --exp_name attn_se --attn_type se")
     print("  python trainV72_ablation.py --exp_name attn_cbam --attn_type cbam")
+
+

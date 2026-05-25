@@ -6,7 +6,7 @@ These files are preserved from the original research workspace for traceability.
 - `src/pistdnet/` for importable model, data, metrics, training, evaluation, and visualization modules
 - `configs/` for editable experiment settings
 
-Local absolute data paths have been replaced with placeholders such as `/path/to/TorNet`.
+Local absolute data paths have been replaced with example paths such as `/path/to/TorNet`.
 
 ## Moved Files
 

@@ -24,8 +24,8 @@ class MockArgs:
         self.disable_topk = True  
         self.disable_rot_stats = disable_rot_stats
 
-class AttentionPlotterTGRS:
-    """TGRS 级定稿：极限紧凑 + 内部代号抹除 + 完美大满贯版"""
+class AttentionPlotterResearch:
+    """Research 级定稿：极限紧凑 + 内部代号抹除 + 完美大满贯版"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -84,7 +84,7 @@ class AttentionPlotterTGRS:
             ax_z.set_xticks([]); ax_z.set_yticks([])
             if row_idx == 0: ax_z.set_title(col_titles[0], fontweight='bold', fontsize=15, pad=15)
             
-            # 💡 核心微调 2：删除丑陋的 [Idx: xxxx]，使用正规的学术命名
+            # 💡 核心微调 2：删除丑陋的 [Idx: index values]，使用正规的学术命名
             row_label = f"Case 1\nReal Tornado (TOR)" if cat_id == 2 else f"Case 2\nFalse Alarm (WRN)"
             ax_z.set_ylabel(row_label, fontweight='bold', fontsize=16, labelpad=15)
 
@@ -178,7 +178,7 @@ class AttentionPlotterTGRS:
         cbar_hm.set_label('Normalized Physics Attention Level', fontsize=15, fontweight='bold')
         cbar_hm.set_ticks([0, 0.5, 1.0])
 
-        save_path = os.path.join(self.save_dir, "Figure7_Perfect_TGRS_Final.pdf")
+        save_path = os.path.join(self.save_dir, "Figure7_Perfect_Research_Final.pdf")
         plt.savefig(save_path, bbox_inches='tight')
         print(f"\n✅ 毫无破绽！【无敌紧凑大满贯定稿】已保存至: {save_path}")
         plt.close()
@@ -221,7 +221,7 @@ def execute(args):
         {"idx": 2476, "type": "WRN", "probs": {"CBAM": 0.63, "SE": 0.62, "Ours": 0.24}}  
     ]
     
-    plotter = AttentionPlotterTGRS(save_dir=args.save_dir)
+    plotter = AttentionPlotterResearch(save_dir=args.save_dir)
     plotter.plot_attention_grid(dataset, golden_cases, models_dict, device)
 
 if __name__ == '__main__':
@@ -233,3 +233,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     execute(args)
+
+

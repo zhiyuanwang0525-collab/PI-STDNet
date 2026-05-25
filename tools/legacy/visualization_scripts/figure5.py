@@ -23,13 +23,13 @@ class MockArgs:
         self.disable_topk = True  
         self.disable_rot_stats = disable_rot_stats
 
-class DecisionSpacePlotterTGRS:
-    """TGRS 级：极简克制、学术质感拉满的 0.6 决胜散点图"""
+class DecisionSpacePlotterResearch:
+    """Research 级：极简克制、学术质感拉满的 0.6 决胜散点图"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
         
-        # 严格的 IEEE 顶刊绘图参数
+        # 严格的 paper绘图参数
         plt.rcParams.update({
             'font.family': 'sans-serif', 
             'font.sans-serif': ['Arial', 'Helvetica'],
@@ -128,9 +128,9 @@ class DecisionSpacePlotterTGRS:
         legend = ax.legend(loc='lower left', framealpha=1.0, fontsize=12, edgecolor='#AAAAAA')
         legend.get_frame().set_boxstyle("square,pad=0.2")
 
-        save_path = os.path.join(self.save_dir, "Figure5_Decision_Scatter_TGRS.pdf")
+        save_path = os.path.join(self.save_dir, "Figure5_Decision_Scatter_Research.pdf")
         plt.savefig(save_path, bbox_inches='tight')
-        print(f"\n✅ 绝杀！【TGRS 级极简定稿版】四象限散点图已保存至: {save_path}")
+        print(f"\n✅ 绝杀！【Research 级极简定稿版】四象限散点图已保存至: {save_path}")
         plt.close()
 
 def extract_and_plot(args):
@@ -184,7 +184,7 @@ def extract_and_plot(args):
     ours_probs = np.array(probs_collected["PI-STDNet (Ours)"])
     targets = np.array(labels_list)
 
-    plotter = DecisionSpacePlotterTGRS(save_dir=args.save_dir)
+    plotter = DecisionSpacePlotterResearch(save_dir=args.save_dir)
     plotter.plot_decision_shift(baseline_probs, ours_probs, targets)
 
 if __name__ == '__main__':
@@ -197,3 +197,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     extract_and_plot(args)
+
+

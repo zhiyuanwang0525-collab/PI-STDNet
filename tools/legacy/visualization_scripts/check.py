@@ -37,7 +37,7 @@ def calc_metrics(probs, labels, mask, thresh):
     return csi, pod, far
 
 class MetricsCurvePlotter:
-    """TGRS 级：1x3 阈值演化性能评估曲线"""
+    """Research 级：1x3 阈值演化性能评估曲线"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -176,3 +176,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     extract_and_plot(args)
+
+

@@ -23,8 +23,8 @@ class MockArgs:
         self.disable_topk = disable_topk
         self.disable_rot_stats = disable_rot_stats 
         
-class CurvePlotterTGRS:
-    """TGRS 级：ROC(带局部放大) & PR 黄金三角版"""
+class CurvePlotterResearch:
+    """Research 级：ROC(带局部放大) & PR 黄金三角版"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -188,7 +188,7 @@ def execute(args):
     y_true = np.array(targets_list)
     y_scores_dict = {name: np.array(probs) for name, probs in probs_collected.items()}
     
-    plotter = CurvePlotterTGRS(save_dir=args.save_dir)
+    plotter = CurvePlotterResearch(save_dir=args.save_dir)
     plotter.plot_curves(y_true, y_scores_dict)
 
 if __name__ == '__main__':
@@ -200,3 +200,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     execute(args)
+
+

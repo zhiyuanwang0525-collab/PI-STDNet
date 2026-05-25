@@ -839,7 +839,7 @@ def find_first_valid_sequence(
 # =========================================================
 # 7. Plotting: three-panel version
 # =========================================================
-class SequencePlotterTGRS:
+class SequencePlotterResearch:
     def __init__(self, save_dir):
         self.save_dir = save_dir
         os.makedirs(save_dir, exist_ok=True)
@@ -1217,7 +1217,7 @@ def execute(args):
 
     print_selected_details(dataset, selected)
 
-    plotter = SequencePlotterTGRS(args.save_dir)
+    plotter = SequencePlotterResearch(args.save_dir)
     fig_path = plotter.plot(dataset, selected, display_frame=display_frame)
     meta_path = save_metadata(dataset, selected, args.save_dir)
 
@@ -1263,3 +1263,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     execute(args)
+
+

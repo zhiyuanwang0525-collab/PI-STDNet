@@ -249,15 +249,15 @@ def main():
              probs=all_probs, labels=all_labels, cats=all_cats)
     print(f"  💾 概率已保存: {args.save_dir}/predictions.npz")
     
-    # ====== NC 视图: All nulls vs confirmed ======
+    # ====== NC 视图: All nulls vs TOR ======
     mask_nc = np.ones_like(all_labels, dtype=bool)
     result_nc = full_evaluation(all_probs[mask_nc], all_labels[mask_nc],
-                                "NC (All nulls vs confirmed)", args.save_dir)
+                                "NC (All nulls vs TOR)", args.save_dir)
     
-    # ====== WC 视图: Warnings vs confirmed ======
+    # ====== WC 视图: Warnings vs TOR ======
     mask_wc = (all_cats == 2) | (all_cats == 1)
     result_wc = full_evaluation(all_probs[mask_wc], all_labels[mask_wc],
-                                "WC (Warnings vs confirmed)", args.save_dir)
+                                "WC (Warnings vs TOR)", args.save_dir)
     
     # ====== 汇总对比表 ======
     print(f"\n{'='*70}")
@@ -296,3 +296,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+

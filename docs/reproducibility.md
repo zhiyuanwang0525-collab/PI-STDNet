@@ -10,5 +10,4 @@ Reproducible runs depend on:
 
 The default seed is `42`, set through `training.seed`.
 
-TODO: Confirm the exact hardware, CUDA version, PyTorch version, released data split, and public checkpoint identifiers used for the paper experiments.
-
+Hardware, CUDA/PyTorch details, released split notes, and checkpoint identifiers will be updated upon publication when the final reproducibility statement is settled.

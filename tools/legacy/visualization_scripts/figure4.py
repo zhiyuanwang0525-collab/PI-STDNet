@@ -1,6 +1,6 @@
 ﻿# Legacy note: Preserved from the original research workspace for traceability. Prefer scripts/ and src/pistdnet/ for public use.
 """
-PI-STDNet V8.2 论文可视化图生成脚本 (TGRS 顶刊终极版)
+PI-STDNet V8.2 论文可视化图生成脚本 (Research 顶刊终极版)
 
 核心升级点:
 1. 采用无衬线学术字体 (Arial/Helvetica)，字体加粗且加大，满足高分辨率印刷要求。
@@ -236,8 +236,8 @@ def main(args):
                 'physics_attn': pa_full, 'spatial_pred': sp_full,
             })
 
-    # ====== 生成 Fig.4 组合大图 (TGRS 出版级排版) ======
-    print("\n🖼️ 正在渲染 TGRS 审稿人特供版 Fig.4 组合大图...")
+    # ====== 生成 Fig.4 组合大图 (Research 出版级排版) ======
+    print("\n🖼️ 正在渲染 Research 审稿人特供版 Fig.4 组合大图...")
     
     row_order = ['TP_strong', 'TP_weak', 'TN_wrn', 'FP', 'FN']
     selected = []
@@ -365,3 +365,5 @@ if __name__ == '__main__':
     parser.add_argument('--max_per_type', type=int, default=5)
     args = parser.parse_args()
     main(args)
+
+

@@ -23,8 +23,8 @@ class MockArgs:
         self.disable_topk = disable_topk
         self.disable_rot_stats = disable_rot_stats
 
-class RangeRobustnessPlotterTGRS:
-    """TGRS 级：真实雷达探测距离衰减曲线"""
+class RangeRobustnessPlotterResearch:
+    """Research 级：真实雷达探测距离衰减曲线"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -196,7 +196,7 @@ def execute(args):
             
         print(f"  📍 区间 [{label} km]: 样本数 = {len(idx_in_bin)} (其中龙卷: {sum(y_true_bin)})")
 
-    plotter = RangeRobustnessPlotterTGRS(save_dir=args.save_dir)
+    plotter = RangeRobustnessPlotterResearch(save_dir=args.save_dir)
     plotter.plot_robustness(bin_labels, robustness_results)
 
 if __name__ == '__main__':
@@ -208,3 +208,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     execute(args)
+
+

@@ -1,6 +1,6 @@
 # Data Preparation
 
-This repository does not include raw TorNet radar data because dataset access and redistribution are governed by the dataset license. Please obtain TorNet from the official TorNet distribution channel and follow its terms of use.
+This repository does not include raw TorNet radar data because dataset access and redistribution are governed by the dataset license. The TorNet benchmark dataset is publicly available from the official TorNet data source. Users should follow the original dataset license and access instructions.
 
 Prepare the data outside the source tree and point configs to it. Avoid placing the dataset inside this repository:
 

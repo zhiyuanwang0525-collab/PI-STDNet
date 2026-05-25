@@ -25,8 +25,8 @@ class MockArgs:
         self.disable_topk = disable_topk
         self.disable_rot_stats = disable_rot_stats
 
-class ReliabilityPlotterTGRS:
-    """TGRS 级：概率可靠性图 (Reliability Diagram / Calibration Curve)"""
+class ReliabilityPlotterResearch:
+    """Research 级：概率可靠性图 (Reliability Diagram / Calibration Curve)"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
         os.makedirs(self.save_dir, exist_ok=True)
@@ -170,7 +170,7 @@ def execute(args):
     y_scores_dict = {name: np.array(probs) for name, probs in probs_collected.items()}
 
     print("\n📊 正在执行概率校准计算与绘图...")
-    plotter = ReliabilityPlotterTGRS(save_dir=args.save_dir)
+    plotter = ReliabilityPlotterResearch(save_dir=args.save_dir)
     plotter.plot_reliability(y_true, y_scores_dict)
 
 if __name__ == '__main__':
@@ -182,3 +182,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     execute(args)
+
+

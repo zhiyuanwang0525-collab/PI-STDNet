@@ -5,13 +5,13 @@
 - Reorganized model, data, training, evaluation, metrics, utilities, and visualization modules under `src/pistdnet/`.
 - Added config-based training, evaluation, inference, reproducibility, and temporal visualization entry points under `scripts/`.
 - Added `README.md`, documentation files, dependency files, tests, `.gitignore`, and safety checking utilities.
-- Replaced local absolute dataset paths in public configs with placeholders such as `/path/to/TorNet`.
+- Replaced local absolute dataset paths in public configs with example paths such as `/path/to/TorNet`.
 - Preserved original experimental logic by moving legacy research scripts into `tools/legacy/`.
 - Moved local checkpoints, logs, generated figures, and evaluation outputs out of the public source tree.
-- Added TODO markers for license, dataset release instructions, pretrained weights, hardware details, and final citation.
+- Added release notes for licensing, dataset access, pretrained-weight policy, hardware notes, and citation metadata.
 - Added Apache-2.0 license metadata after license selection.
 - Added author-person copyright notice, official TorNet data wording, and non-release policy for pretrained weights.
-- Renamed citation metadata to `CITATION.cff` and removed unconfirmed DOI/venue/year placeholders.
+- Renamed citation metadata to `CITATION.cff` and removed unverified publication metadata fields.
 
 ## Legacy Script Moves
 

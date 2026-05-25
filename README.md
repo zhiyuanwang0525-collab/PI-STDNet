@@ -6,7 +6,7 @@ PI-STDNet integrates observation-derived radar physical priors with a ConvNeXt-U
 
 ## Repository Status
 
-This code release is prepared for research reproducibility. Dataset files, pretrained weights, training logs, and generated paper figures are not included in the public source tree. TorNet data should be obtained from the official TorNet distribution channel. Pretrained weights are not publicly released at this time. TODO: confirm hardware details and final citation.
+This code release is prepared for research reproducibility for a manuscript currently under review. Dataset files, pretrained weights, training logs, and generated paper figures are not included in the public source tree. TorNet data should be obtained from the official TorNet data source. Pretrained weights are not publicly released at this time.
 
 ## Installation
 
@@ -22,7 +22,7 @@ The PyTorch/CUDA build may need to be adjusted for your local GPU and driver.
 
 ## Data Preparation
 
-Download or request TorNet through the official TorNet distribution channel, then prepare a TorNet-style directory outside the repository:
+The TorNet benchmark dataset is publicly available from the official TorNet data source. Users should follow the original dataset license and access instructions, then prepare a TorNet-style directory outside the repository:
 
 ```text
 /path/to/TorNet/
@@ -69,25 +69,38 @@ Legacy figure scripts from the original research workspace are preserved under `
 
 ## Reproducibility
 
-Use the YAML config files, fixed random seed, and the same checkpoint to reproduce a run. The default seed is `42`. Environment details are captured in `requirements.txt` and `environment.yml`. TODO: confirm hardware, CUDA version, exact data split release, and final checkpoint identifiers.
+Use the YAML config files, fixed random seed, and the same checkpoint to reproduce a run. The default seed is `42`. Environment details are captured in `requirements.txt` and `environment.yml`. Hardware, CUDA/PyTorch details, and final manuscript citation information will be updated upon publication.
+
+## Code Availability
+
+Source code is available in this repository. Processed files and experiment configurations generated during the study are available from the corresponding author upon reasonable request.
 
 ## Citation
 
-If you use this repository, please cite the PI-STDNet research code release. The paper citation will be updated after publication details are confirmed.
+If you use this repository, please cite the manuscript once it becomes available. Citation information will be updated after publication.
+
+Manuscript status: under review.
+
+Authors: Zhiyuan Wang, Kun Zheng, Jiaolong Zhang, Yongsheng Li, Yanping Zheng, Jinbiao Zhang, and Jiayi Liu.
+
+Affiliations:
+
+- School of Geography and Information Engineering, China University of Geosciences, Wuhan 430074, China
+- Guangdong Meteorological Data Center, Guangzhou 510080, China
+
+Corresponding author: Kun Zheng, ZhengK@cug.edu.cn.
 
 ```bibtex
 @misc{wang2026pistdnet,
-  title = {PI-STDNet: Physics-Guided Spatiotemporal Framework for Tornado Detection},
-  author = {Wang, Zhiyuan and Zheng, Kun and Zhang, Jiaolong},
-  note = {Research code release. Publication details to be updated.},
+  title = {Physics-informed interpretation of polarimetric radar observations for tornado detection in severe convective storms},
+  author = {Wang, Zhiyuan and Zheng, Kun and Zhang, Jiaolong and Li, Yongsheng and Zheng, Yanping and Zhang, Jinbiao and Liu, Jiayi},
+  note = {Manuscript under review},
   year = {2026}
 }
 ```
-
-Affiliation: China University of Geosciences, Wuhan. Corresponding author: Kun Zheng, ZhengK@cug.edu.cn.
 
 ## License
 
 This repository is released under the Apache License 2.0. See `LICENSE`.
 
-Copyright 2026 Zhiyuan Wang, Kun Zheng, and Jiaolong Zhang.
+Copyright 2026 Zhiyuan Wang, Kun Zheng, Jiaolong Zhang, Yongsheng Li, Yanping Zheng, Jinbiao Zhang, and Jiayi Liu.

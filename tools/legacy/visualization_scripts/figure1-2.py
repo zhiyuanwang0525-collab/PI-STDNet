@@ -12,7 +12,7 @@ from tqdm import tqdm
 # 导入你自己的真实模型、数据集和配置
 from train import PI_STDNet_V8, TorNetDatasetV8_Full, CONFIG
 
-class TGRSPlotter:
+class ResearchPlotter:
     """PI-STDNet 出版级雷达扇形绘图引擎 (终极定稿版)"""
     def __init__(self, save_dir="paper_figures_final"):
         self.save_dir = save_dir
@@ -22,7 +22,7 @@ class TGRSPlotter:
         self.cmap_v = plt.cm.seismic
         self.cmap_prob = plt.cm.magma
         
-        # 强制接管全局 IEEE 字体和排版规范
+        # 强制接管全局 paper font和排版规范
         plt.rcParams.update({
             'font.family': 'sans-serif', 
             'font.sans-serif': ['Arial', 'Helvetica'],
@@ -226,7 +226,7 @@ def find_and_plot_figure1(args):
                 break
 
     if wrn_case and tor_case:
-        plotter = TGRSPlotter(save_dir=args.save_dir)
+        plotter = ResearchPlotter(save_dir=args.save_dir)
         plotter.plot_figure_1_motivation(wrn_case, tor_case)
     else:
         print("❌ 依然未能找到同时满足条件的样本，建议继续适当降低 WRN 的面积/概率要求或 TOR 的速度差。")
@@ -240,3 +240,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     find_and_plot_figure1(args)
+
+

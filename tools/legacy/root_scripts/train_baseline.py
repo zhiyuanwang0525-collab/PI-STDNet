@@ -25,7 +25,7 @@ except ImportError:
 
 # ================= 1. 严格复刻官方 Baseline 架构 =================
 
-class OfficialCoordConv2d(nn.Module):
+class ReferenceCoordConv2d(nn.Module):
     """复刻官方的坐标卷积：在特征图上拼接 X 和 Y 坐标"""
     def __init__(self, in_channels, out_channels, kernel_size=3, padding=1):
         super().__init__()
@@ -39,14 +39,14 @@ class OfficialCoordConv2d(nn.Module):
         x = torch.cat([x, y_coords, x_coords], dim=1)
         return self.relu(self.conv(x))
 
-class OfficialVggBlock(nn.Module):
+class ReferenceVggBlock(nn.Module):
     """复刻官方代码中的 VggBlock (包含多个 CoordConv 和 1个 MaxPool)"""
     def __init__(self, in_channels, out_channels, n_convs, drop_rate=0.1):
         super().__init__()
         self.layers = nn.ModuleList()
         for i in range(n_convs):
             current_in = in_channels if i == 0 else out_channels
-            self.layers.append(OfficialCoordConv2d(current_in, out_channels))
+            self.layers.append(ReferenceCoordConv2d(current_in, out_channels))
             
         self.pool = nn.MaxPool2d(2, stride=2)
         self.drop = nn.Dropout(p=drop_rate) if drop_rate > 0 else nn.Identity()
@@ -57,14 +57,14 @@ class OfficialVggBlock(nn.Module):
         x = self.pool(x)
         return self.drop(x)
 
-class OfficialTornadoCNN(nn.Module):
+class ReferenceTornadoCNN(nn.Module):
     """严格对应官方的 TornadoLikelihood + TornadoClassifier 的前向传播"""
     def __init__(self, in_channels):
         super().__init__()
-        self.blk1 = OfficialVggBlock(in_channels, 64, n_convs=2)   
-        self.blk2 = OfficialVggBlock(64, 128, n_convs=2)           
-        self.blk3 = OfficialVggBlock(128, 256, n_convs=3)          
-        self.blk4 = OfficialVggBlock(256, 512, n_convs=3)          
+        self.blk1 = ReferenceVggBlock(in_channels, 64, n_convs=2)   
+        self.blk2 = ReferenceVggBlock(64, 128, n_convs=2)           
+        self.blk3 = ReferenceVggBlock(128, 256, n_convs=3)          
+        self.blk4 = ReferenceVggBlock(256, 512, n_convs=3)          
         
         self.head = nn.Sequential(
             nn.Conv2d(512, 512, kernel_size=1), nn.ReLU(inplace=True),
@@ -110,7 +110,7 @@ def main():
 
     # 2. 模型、优化器与 AMP 缩放器
     in_channels = CONFIG['N_FRAMES'] * CONFIG['CHANNELS_PER_FRAME'] * CONFIG['N_SWEEPS']
-    model = OfficialTornadoCNN(in_channels=in_channels).to(device)
+    model = ReferenceTornadoCNN(in_channels=in_channels).to(device)
     
     optimizer = optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-3)
     criterion = nn.BCEWithLogitsLoss() 
@@ -157,7 +157,7 @@ def main():
 
         all_probs, all_labels, all_cats = np.array(all_probs), np.array(all_labels), np.array(all_cats)
         
-        logger.info(f"\n======== Official Baseline Epoch {epoch+1} | Loss: {train_loss/len(train_loader):.4f} ========")
+        logger.info(f"\n======== Reference Baseline Epoch {epoch+1} | Loss: {train_loss/len(train_loader):.4f} ========")
         
         mask_nc = np.ones_like(all_labels, dtype=bool)
         nc_csi = evaluate_metrics(all_probs, all_labels, mask_nc, "CNN Baseline - 全量视图 NC")
@@ -167,7 +167,7 @@ def main():
 
         if wc_csi > best_wc_csi:
             best_wc_csi = wc_csi
-            torch.save(model.state_dict(), "best_official_cnn_baseline.pth")
+            torch.save(model.state_dict(), "best_reference_cnn_baseline.pth")
             logger.info(f"🟢 Baseline 新高: {best_wc_csi:.4f} (可以直接写入对比大表！)")
 
 if __name__ == '__main__':
@@ -175,3 +175,5 @@ if __name__ == '__main__':
     import multiprocessing
     multiprocessing.freeze_support()
     main()
+
+
